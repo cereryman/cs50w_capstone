@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 #import django_heroku
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,7 @@ SECRET_KEY = 'u8s#l^)fp*^8nr%)sl6%t=fs27uv0$e#mpox!yc81%45zwn5c='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['10.0.1.11', '127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'hms',
 ]
@@ -94,6 +96,8 @@ DATABASES = {
     }
 }
 
+WHITENOISE_USE_FINDERS = True
+
 AUTH_USER_MODEL = "hms.User"
 
 # Password validation
@@ -144,3 +148,7 @@ MEDIA_URL = '/media/'
 
 # Activate Django-Heroku.
 #django_heroku.settings(locals())
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
