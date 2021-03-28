@@ -4,7 +4,7 @@ Heroku link: https://hospital-mgmt-system.herokuapp.com/
 
 ## Table of contents ##
 * [Introduction](#introduction)
-* [Requirement and Set-up](#requirements-and-set-up)
+* [Requirements and Set-up](#requirements-and-set-up)
 * [User roles, models and views](#user-roles-models-and-views)
 * [Functionality](#functionality)
 * [Limitations and improvements](#limitations-and-improvements)
@@ -16,7 +16,7 @@ Heroku link: https://hospital-mgmt-system.herokuapp.com/
 This website is submitted as a capstone project for the CS50W class taken via HarvardX. It is a simple patient management system for a hospital which allows nurses and staff to track of the health of patients by keep a record of things such as allergies, vital signs and daily logs. It is still far from being at a level of being usable in a professional setting but it serves as a demonstration of what is possible.
 It was developed by using Django as a platform and for portability, uses a minimal number of imported modules/functionalities static templates files as possible.
 
-## Requirement and Set-up ##
+## Requirements and Set-up ##
 ### Requirements ###
 * CS50: For submitting the project.
 * Django: The platform.
@@ -52,28 +52,28 @@ The following additions to the Django setting file are required:
 * chart view: This view gets the patient id and vital sign id as an input, and then extracts the required data from the database. It then formats the data in the proper format required by Google Charts via a JSON format, so that 	the graphs can be viewed and update without refreshing the page. The data decimal data is encoded for JSON by using the DecimalEncoder class.
 
 ## Functionality ##
-* Register
+* Register: 
 This allows anyone with access to the website to register an account as a nurse/regular user.
-* Login, Log-out
+* Login, Log-out: 
 A user can login and logout by clicking the link
-* Admin View
+* Admin View: 
 The admin view provides an administrator with the ability to edit any data in any model shown in the section above.
-* Patient Index
+* Patient Index: 
 One a user is logged-in, this page can be accessed to see a list of patients registered in the database. When a patient is clicked, the user is taken to the patient’s profile page.
-* Add a Patient, Delete a patient
+* Add a Patient, Delete a patient: 
 user can add a new patient, which includes patient information such as patient name, birth date, contact information, gender, bed location, insurance information and secondary contact information etc. A profile picture can also be 	uploaded.
 * Patient Profiles
-	* Profile picture
+	* Profile picture: 
 The user profile can include a picture, which can be enlarged when it is clicked. A button above the picture allows a user to update or add a profile picture.
-	* Patient Information
+	* Patient Information: 
 The profile information is displayed, which shows the patient name, birth date, contact information, gender, bed location, insurance information and secondary contact information etc. All these fields can be edited at a later date.
-	* Hospitalization Status and History
+	* Hospitalization Status and History: 
 It is possible to check-in or a check-out a patient of the hospital. This way, a patient profile can be kept intact should a patient be released, in case he/she is re-admitted to the hospital at later date. A record of check-ins and check-outs should be displayed.
-	* Daily Log
+	* Daily Log: 
 The page should display a daily log, written by a nurse, showing the log content, the author and a time/date; the logs are displayed from newest to latest. It should be possible for a user to add a new log, and to delete/edit previous logs.
-	* Allergies
+	* Allergies: 
 The page should display allergies for a patient, showing details about the allergy such as allergy type, reaction, severity. It should be possible for a user to add a new allergy, and to delete/edit existing allergies.
-	* Vitals
+	* Vitals: 
 The page shows a plot of the vitals (blood pressure, respiratory rate, body temperature, heart rate) over time for the patient. It is possible to add a point for the current time/data for the select vital sign. The charts use a JSON response so that the charts can be updated without having to refreshing the page. The charts are powered by Google Charts, this is so charts can be displayed without installing any other dependencies for Django.
 
 ## Limitations and Improvements ##
