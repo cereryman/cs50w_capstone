@@ -1,38 +1,22 @@
-Heroku link:
-https://hospital-mgmt-system.herokuapp.com/
+Heroku link: https://hospital-mgmt-system.herokuapp.com/
 
-Table of Content
-1. Introduction
-2. Requirement and Set-up
-	a) Requirements
-	b) Set-Up
-3. User roles, models and views
-	a) Users roles
-	b) Models
-	c) Views
-4. Functionality
-	a) Register
-	b) Login, Log-out
-	c) Admin View
-	d) Patient Index
-	e) Add a Patient, Delete a patient
-	f) Patient Profiles
-		i) Profile picture
-		ii) Patient Information
-		iii) Hospitalization Status and History
-		iv) Daily Log
-		v) Allergies
-		vi) Vitals
-5. Limitations and improvements
-6. References
-7. Conclusion
+# Hospital Management System #
+
+## Table of contents ##
+* [Introduction](#introduction)
+* [Requirement and Set-up](#requirements_and_set_up)
+* [User roles, models and views](#user_roles_models_and_views)
+* [Functionality](#functionality)
+* [Limitations and improvements](#limitations_and_improvements)
+* [References](#references)
+* [Conclusion](#conclusion)
 
 
-1.	Introduction
+## Introduction ##
 This website is submitted as a capstone project for the CS50W class taken via HarvardX. It is a simple patient management system for a hospital which allows nurses and staff to track of the health of patients by keep a record of things such as allergies, vital signs and daily logs. It is still far from being at a level of being usable in a professional setting but it serves as a demonstration of what is possible.
 It was developed by using Django as a platform and for portability, uses a minimal number of imported modules/functionalities static templates files as possible.
 
-2.	Requirement and Set-up
+## Requirement and Set-up ##
 	a)	Requirements
 	-	CS50: For submitting the project.
 	-	Django: The platform.
@@ -43,7 +27,7 @@ It was developed by using Django as a platform and for portability, uses a minim
 	-	MEDIA_URL = '/media/'
 	-	MEDIA_ROOT = BASE_DIR / 'media'
 
-3.	User roles, models and views
+## User roles, models and views ##
 	a)	Users roles
 	-	Guest: As a guest, user can only view the main splash page on the index view. attempts to view any other page will redirect to a login page.
 	-	Nurse/Regular User: Nurses/Regular users can view, edit/add/delete patient pages.
@@ -67,7 +51,7 @@ It was developed by using Django as a platform and for portability, uses a minim
 	-	addallergy, editallergy, deleteallergy views: These views give a registered the ability to add an allergy for patient, and edit or delete an existing  allergy for a patient when the request is sent by POST. If the request is not via POST, the context parameters (including forms) are sent to the templates add.html, edit.html and delete html respectively.
 	-	chart view: This view gets the patient id and vital sign id as an input, and then extracts the required data from the database. It then formats the data in the proper format required by Google Charts via a JSON format, so that 	the graphs can be viewed and update without refreshing the page. The data decimal data is encoded for JSON by using the DecimalEncoder class.
 
-4.	Functionality
+## Functionality ##
 	a)	Register
 	This allows anyone with access to the website to register an account as a nurse/regular user.
 	b)	Login, Log-out
@@ -92,7 +76,7 @@ It was developed by using Django as a platform and for portability, uses a minim
 		vi)	Vitals
 		The page shows a plot of the vitals (blood pressure, respiratory rate, body temperature, heart rate) over time for the patient. It is possible to add a point for the current time/data for the select vital sign. The charts use a JSON 		response so that the charts can be updated without having to refreshing the page. The charts are powered by Google Charts, this is so charts can be displayed without installing any other dependencies for Django.
 
-5.	Limitations and improvements
+## Limitations and Improvements ##
 -	It should not be possible for any person who visits the page to register and therefore, edit/delete/add patient information. In a real life scenario, this should not be possible
 -	Patient index should sortable and searchable.
 -	When a adding a patient, there should be a way to check of the patient already exists.
@@ -106,7 +90,7 @@ It was developed by using Django as a platform and for portability, uses a minim
 -	Blood pressure charts should be overlayed.
 -	Models should have better description/names in the admin panel
 
-6.	References
+## References ##
 https://www.djangoproject.com/  - General resource
 https://www.w3.org/ - General resource
 https://getbootstrap.com/docs/4.3/getting-started/introduction/  -  The entire layout was taken from bootstrap documentation examples.
@@ -117,5 +101,5 @@ https://developers.google.com/chart/interactive/docs/gallery/linechart - For cha
 https://simpsons.fandom.com/wiki/Snowball_I - Simpsons cat picture.
 http://www.dummytextgenerator.com/ - Random text generator
 
-7.	Conclusion
+## Conclusion ##
 Thank you!
